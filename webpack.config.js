@@ -5,11 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    index: './src/index.js',
-    payment: './src/payment.js',
-    project: './src/project.js',
-    settings: './src/settings.js',
-    slick: './src/slick.js'
+    main: './src/assets/js/main.js'
   },
   output: {
     filename: '[name].js',
@@ -67,31 +63,13 @@ module.exports = {
       template: './src/index.html',
       filename: './index.html',
       inject: true,
-      chunks: ['index']
+      chunks: ['main']
     }),
     new HtmlWebPackPlugin({
-      template: './src/settings.html',
-      filename: './settings.html',
+      template: './src/page.html',
+      filename: './page.html',
       inject: true,
-      chunks: ['index', 'settings']
-    }),
-    new HtmlWebPackPlugin({
-      template: './src/payment.html',
-      filename: './payment.html',
-      inject: true,
-      chunks: ['index', 'payment']
-    }),
-    new HtmlWebPackPlugin({
-      template: './src/project.html',
-      filename: './project.html',
-      inject: true,
-      chunks: ['index', 'project']
-    }),
-    new HtmlWebPackPlugin({
-      template: './src/project-details.html',
-      filename: './project-details.html',
-      inject: true,
-      chunks: ['index']
+      chunks: ['main']
     }),
     new MiniCssExtractPlugin({
       // options similar to the same options in webpackOptions.output

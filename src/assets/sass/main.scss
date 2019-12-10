@@ -3,6 +3,10 @@
 @import 'global/functions';
 @import 'global/mixins';
 
+// vendors
+@import 'vendors/bootstrap';
+@import 'vendors/font-awesome';
+
 // base
 @import 'base/resets';
 @import 'base/fonts';

@@ -1,0 +1,64 @@
+.nav {
+  &bar {
+    z-index: 50;
+
+    &.active {
+      @include respond(medium) {
+        position: fixed;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-brand {
+      margin-right: 3rem;
+    }
+
+    &-collapse {
+      @include respond(largest) {
+        display: flex;
+      }
+
+      @include respond(medium) {
+        display: block;
+        margin-top: 2rem;
+      }
+    }
+
+    &-nav {
+      @include respond(largest) {
+        flex-direction: row;
+      }
+
+      @include respond(medium) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      align-items: center;
+    }
+  }
+
+  .dropdown-item {
+    text-transform: capitalize;
+  }
+
+  &-item {
+    @include respond(largest) {
+      margin: 0 0.6rem;
+    }
+
+    @include respond(medium) {
+      margin: 1rem 0;
+    }
+
+    margin: 0 0.3rem;
+  }
+
+  &-link {
+    @include font-size(regular);
+    text-transform: capitalize;
+    color: color(dark);
+  }
+}
